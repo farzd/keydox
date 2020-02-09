@@ -1,4 +1,4 @@
-const {app, screen, Tray, globalShortcut, BrowserWindow} = require('electron')
+const { app, screen, Tray, globalShortcut, BrowserWindow } = require('electron')
 const ioHook = require('iohook');
 const path = require('path');
 const keyCodes = require('./keys');
@@ -6,7 +6,6 @@ const iconPath = path.join(__dirname, 'images/oval@2x.png');
 
 let mainWindow
 let trays;
-
 app.on('ready', createWindow)
 app.on('window-all-closed', function () {
   ioHook.unregisterAllShortcuts();
@@ -48,12 +47,39 @@ function createWindow () {
   // });
 
   globalShortcut.register('Command+)', () => {
+    toggleWindow()
+  });
+
+  globalShortcut.register('Command+1', () => {
+    if (mainWindow.isVisible()) {
+      changeImg('1')
+    }
+  });
+
+  globalShortcut.register('Command+2', () => {
+    if (mainWindow.isVisible()) {
+      changeImg('2')
+    }
+  }); 
+
+  globalShortcut.register('Command+3', () => {
+    if (mainWindow.isVisible()) {
+      changeImg('3')
+    }
+  }); 
+
+
+  function toggleWindow () {
     if (mainWindow.isVisible()) {
       mainWindow.hide();
   } else {
       mainWindow.show();
   }
-  });
+  }
+
+  function changeImg(img) {
+    mainWindow.webContents.executeJavaScript(`document.querySelector("img").src="../images/${img}.png";`)
+  }
 
   ioHook.start();
 
