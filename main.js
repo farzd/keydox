@@ -85,7 +85,6 @@ function createWindow () {
 
   mainWindow.setAlwaysOnTop(true, "floating");
   mainWindow.setVisibleOnAllWorkspaces(true);
-  mainWindow.setFullScreenable(false);
   mainWindow.loadURL(`file://${__dirname}/html/index1.html`)
 
   // Open the DevTools.---
