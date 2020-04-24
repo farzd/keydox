@@ -66,6 +66,11 @@ function createWindow() {
     }
   })
 
+  globalShortcut.register('Command+4', () => {
+    if (mainWindow.isVisible()) {
+      changeImg('4', mainWindow)
+    }
+  })
   ioHook.start()
 
   mainWindow.setAlwaysOnTop(true, 'floating')

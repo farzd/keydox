@@ -1,6 +1,6 @@
 const changeImg = (img, mainWindow) => {
   mainWindow.webContents.executeJavaScript(
-    `document.querySelector("img").src="../images/${img}.png";`
+    `document.querySelector("img").classList = "class${img}";`
   )
 }
 

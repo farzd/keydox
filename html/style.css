@@ -8,3 +8,19 @@ body {
 img {
     width: 100%;
 }
+
+.class1 {
+    margin-top: 0;
+}
+
+.class2 {
+    margin-top: -192px;
+}
+
+.class3 {
+    margin-top: -384px;
+}
+
+.class4 {
+    margin-top: -576px;
+}
