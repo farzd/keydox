@@ -17,7 +17,7 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^7.1.8",
+    "electron": "^7.2.4",
     "electron-rebuild": "^1.8.8",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.5.1",
